@@ -14,10 +14,10 @@ class Guerreiro extends Personagem {
     }
 
     public void setDefesa(int defesa) {
-        if (defesa >= 0) {
-            this.defesa = defesa;
+        if (defesa < 0) {
+            throw new IllegalArgumentException("Defesa não pode ser negativa.");
         } else {
-            System.out.println("Defesa não pode ser negativa.");
+            this.defesa = defesa;
         }
     }
 
@@ -37,6 +37,16 @@ class Guerreiro extends Personagem {
 
     @Override 
     public String habilidade() throws ForcaInsuficienteException{
-        return "Escudo de aço";
+        if (getForca() < 10) {
+           throw new ForcaInsuficienteException("Força insuficiente!");
+        }
+           return "Escudo de aço";
+    }
+    public void usarhabilidade(){
+        try{
+            System.out.println(habilidade());
+        } catch (ForcaInsuficienteException e){
+            System.out.println(e.getMessage());
+        }
     }
 }

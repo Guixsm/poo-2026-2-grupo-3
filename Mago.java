@@ -28,7 +28,7 @@ class Mago extends Personagem {
     }
 
     @Override 
-    public String habilidade() throws SemManaException{
+    public String habilidade(){
         return "Feitiço arcano";
     }
 }
