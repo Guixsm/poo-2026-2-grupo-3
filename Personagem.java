@@ -15,7 +15,7 @@ abstract public class Personagem{
         setForca(f);
         setNiveL(ni);
     }
-    public abstract String habilidade() throws ForcaInsuficienteException, SemManaException, SemFlechaException;
+    public abstract String habilidade() throws ForcaInsuficienteException;
 
     public String getNome(){
         return nome;

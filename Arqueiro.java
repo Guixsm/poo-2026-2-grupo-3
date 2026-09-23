@@ -25,7 +25,7 @@ class Arqueiro extends Personagem {
     }
 
     @Override
-    public void ficha() throws SemFlechaException{ 
+    public void ficha() { 
         super.ficha();
         System.out.println("Flecha: " + getFlecha());
     }
